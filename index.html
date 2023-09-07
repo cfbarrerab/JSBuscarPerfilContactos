@@ -1,0 +1,36 @@
+<script>
+    var contacto = [{
+        "nombre" : "Nora",
+        "apellido" : "Nav",
+        "gustos" : ["pizza", "programacion"]
+    },
+    {
+        "nombre" : "Harry",
+        "apellido" : "Potter",
+        "numero" : "3178890914",
+        "gustos" : ["Hogwarts", "Magia"]
+
+    },
+    {
+        "nombre" : "Sherlock",
+        "apellido" : "Holmes",
+        "numero" : "3103348941",
+        "gustos" : ["Investigación", "Violín"]
+
+    }];
+
+    function buscarPerfil (nombre, propiedad) {
+        for (var i = 0; i < contacto.length; i++){
+            if (contacto[i].nombre === nombre){
+                return contacto[i][propiedad] || "La propiedad " + propiedad + " no existe en el contacto";
+            } 
+        }
+        return "El contacto de nombre " + nombre + " no está en la lista de contactos";
+    }
+
+    console.log(buscarPerfil("Nora", "gustos"));
+    console.log(buscarPerfil("Harry", "apellido"));
+    console.log(buscarPerfil("Sherlock", "numero"));
+    console.log(buscarPerfil("Nora", "direccion"));
+    console.log(buscarPerfil("Bob", "apellido"));
+</script>
